@@ -12,7 +12,7 @@ export default async function ProfileOverview() {
         <div className="flex items-center">
           <Image
             src={user.imageUrl}
-            alt={user.fullName!}
+            alt={user.fullName || ""}
             width={200}
             height={200}
             className="w-14 h-14 rounded-full object-cover"

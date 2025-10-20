@@ -19,9 +19,10 @@ export default async function BrowsePage({
     sort,
     subCategory,
     maxPrice,
-    minPrice,
+    minPrice = 0,
     color,
   } = searchParams;
+
   const products_data = await getProducts(
     {
       search,
@@ -33,16 +34,19 @@ export default async function BrowsePage({
       size: Array.isArray(size)
         ? size
         : size
-        ? [size] // Convert single size string to array
-        : undefined, // If no size, keep it undefined
+          ? [size] // Convert single size string to array
+          : undefined, // If no size, keep it undefined
       color: Array.isArray(color)
         ? color
         : color
-        ? [color] // Convert single color string to array
-        : undefined, // If no color, keep it undefined
+          ? [color] // Convert single color string to array
+          : undefined, // If no color, keep it undefined
     },
     sort
   );
+  console.log('PARAMS ', minPrice);
+  console.log('MIN PRICE ', minPrice);
+  console.log('PRODUCTS ', products_data);
   const { products } = products_data;
 
   return (

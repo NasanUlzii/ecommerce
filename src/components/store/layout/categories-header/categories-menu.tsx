@@ -31,8 +31,8 @@ export default function CategoriesMenu({
   return (
     <div
       className="relative w-10 h-10 xl:w-[256px] z-50"
-      // onMouseEnter={() => toggleMenu(true)}
-      // onMouseLeave={() => toggleMenu(false)}
+      onMouseEnter={() => toggleMenu(true)}
+      onMouseLeave={() => toggleMenu(false)}
     >
       {/* Trigger and Dropdown Container */}
       <div className="relative">
@@ -64,7 +64,7 @@ export default function CategoriesMenu({
           </span>
 
           <ChevronDown
-            className={cn("hidden xl:inline-flex scale-75 absolute right-3", {
+            className={cn("xl:inline-flex scale-75 absolute right-3", {
               "inline-flex": open,
             })}
           />

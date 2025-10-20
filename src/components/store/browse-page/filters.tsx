@@ -24,7 +24,7 @@ export default async function ProductFilters({
       <FiltersHeader queries={queries} />
       {/* Filters */}
       <div className="border-t w-40 md:w-44">
-        <PriceFilter />
+        {/* <PriceFilter /> */}
         <CategoryFilter categories={categories} />
         <ColorFilter queries={queries} storeUrl={storeUrl} />
         <OfferFilter offers={offers} />

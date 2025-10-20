@@ -18,6 +18,7 @@ export default async function AdminDashboardLayout({
 }) {
   // Block non admins from accessing the admin dashboard
   const user = await currentUser();
+
   if (!user || user.privateMetadata.role !== "ADMIN") redirect("/");
   return (
     <div className="w-full h-full">

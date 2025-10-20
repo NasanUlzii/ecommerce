@@ -18,7 +18,7 @@ export default async function UserMenu() {
         {user ? (
           <Image
             src={user.imageUrl}
-            alt={user.fullName!}
+            alt={user.fullName || ""}
             width={40}
             height={40}
             className="w-10 h-10 object-cover rounded-full"
@@ -100,10 +100,9 @@ export default async function UserMenu() {
                 <ul className="pt-2.5 pr-4 pb-1 pl-4 w-[288px]">
                   {extraLinks.map((item, i) => (
                     <li key={i}>
-                      <Link href={item.link} legacyBehavior>
-                        <a className="block text-sm text-main-primary py-1.5 hover:underline">
-                          {item.title}
-                        </a>
+                      <Link href={item.link}
+                        className="block text-sm text-main-primary py-1.5 hover:underline">
+                        {item.title}
                       </Link>
                     </li>
                   ))}

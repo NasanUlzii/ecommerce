@@ -7,10 +7,10 @@ import { cookies } from "next/headers";
 import { Country } from "@/lib/types";
 import CountryLanguageCurrencySelector from "./country-lang-curr-selector";
 
-export default function Header() {
+export default async function Header() {
   // Get cookies from the store
   const cookieStore = cookies();
-  const userCountryCookie = cookieStore.get("userCountry");
+  const userCountryCookie = (await cookieStore).get("userCountry");
 
   // Set default country if cookie is missing
   let userCountry: Country = {
@@ -31,7 +31,7 @@ export default function Header() {
         <div className="flex lg:w-full lg:flex-1 flex-col lg:flex-row gap-3 py-3">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <h1 className="font-extrabold text-3xl font-mono">GoShop</h1>
+              <h1 className="font-extrabold text-3xl font-mono">MEDIKS SHOP</h1>
             </Link>
             <div className="flex lg:hidden">
               <UserMenu />

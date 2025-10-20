@@ -52,7 +52,7 @@ export default async function HomePage() {
               {/* Middle */}
               <div className="space-y-2 h-fit">
                 {/* Main swiper */}
-                <HomeMainSwiper />
+                {/* <HomeMainSwiper /> */}
                 {/* Featured card */}
                 <Featured
                   products={products_featured.filter(
@@ -73,12 +73,12 @@ export default async function HomePage() {
             </div>
             {/* Animated deals */}
             <div className="mt-2 hidden min-[915px]:block">
-              <AnimatedDeals
+              {/* <AnimatedDeals
                 products={products_best_deals.filter(
                   (product): product is SimpleProduct =>
                     "variantSlug" in product
                 )}
-              />
+              /> */}
             </div>
             <div className="mt-10 space-y-10">
               <div className="bg-white rounded-md">
